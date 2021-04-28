@@ -2,54 +2,54 @@
   margin: 0%;
   padding: 0%;
   box-sizing: border-box;
+  font-family: sans-serif;
 }
 
 body {
   background-color: #6d1a85;
-  color: white;
+  color: black;
 }
-
+/*Selecting the landing section*/
 .landing {
   background-color: black;
-  color: white;
+  color: #6d1a85;
   background-position: center;
   height: 100vh;
   display: grid;
   place-items: center;
 }
 
+/* Selecting the timeline container */
 #timeline-container {
   display: grid;
   grid-template-columns: 1fr 10% 1fr;
   grid-template-rows: repeat(4, 1fr);
   height: 100vh;
   width: 100vw;
-  padding: 5%;
+  padding: 0;
 }
-
+/* Selecting timeline-line */
 .timeline-line {
-  background-color: white;
-  width: 10%;
-  height: 100vh;
-  padding: 16px;
+  background-color: black;
+  height: 100%;
+  padding: 5px;
   justify-self: center;
   grid-column-start: 2;
   grid-row-start: 1;
   grid-row-end: 5;
-  border-radius: 50px;
-  background: #0a020c;
-  box-shadow: 20px 20px 60px #5d1671, -20px -20px 60px #7d1e99;
 }
-
+/* Selecting all items */
 .timeline-items {
   border-radius: 50px;
   background: #6d1a85;
   box-shadow: 20px 20px 60px #5d1671, -20px -20px 60px #7d1e99;
   padding: 10%;
-  justify-self: center;
-  align-self: center;
+  margin: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-
+/* Items 1-4 */
 .item-1 {
   grid-column: 1;
   grid-row: 1;
@@ -68,4 +68,34 @@ body {
 .item-4 {
   grid-column: 3;
   grid-row: 4;
+}
+
+@media screen and (max-width: 800px) {
+  #timeline-container {
+    grid-template-columns: 10% 1fr;
+  }
+  .timeline-line {
+    grid-column: 1;
+    grid-row-start: 1;
+    grid-row-end: 5;
+  }
+  .item-1 {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .item-2 {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  .item-3 {
+    grid-column: 2;
+    grid-row: 3;
+  }
+
+  .item-4 {
+    grid-column: 2;
+    grid-row: 4;
+  }
 }
