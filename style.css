@@ -3,22 +3,68 @@
   padding: 0%;
   box-sizing: border-box;
   font-family: sans-serif;
+  scroll-behavior: smooth;
+  
 }
 
 body {
   background-color: #6d1a85;
   color: black;
+  overflow-x: hidden;
 }
 /*Selecting the landing section*/
 .landing {
   background-color: black;
-  color: #6d1a85;
+
   background-position: center;
   height: 100vh;
+  position: relative;
+
   display: grid;
   place-items: center;
 }
 
+.landing h1{
+  border: #5d1671 2px solid;
+  color: #5d1671;
+
+  padding: 10px 10px;
+
+  font-size: 35px;
+  
+}
+
+.link{
+  position: absolute;
+  bottom: 0;
+  /* left: 50%; */
+  /* right: 50%; */
+  margin-bottom: 10px;
+  height: 40px;
+  width: 40px;
+
+  display: grid;
+  place-items: center;
+
+  border: solid 2px #5d1671;
+  border-radius: 50%;
+
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bold;
+  color: #5d1671;
+  animation: show 2s 2s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+  font-size: 25px;
+  
+}
+
+
+@keyframes show {
+  from{ opacity: 0;}
+  to{ opacity: 1;}
+}
 /* Selecting the timeline container */
 #timeline-container {
   display: grid;
