@@ -4,13 +4,19 @@
   box-sizing: border-box;
   font-family: sans-serif;
   scroll-behavior: smooth;
-  
 }
-
+::-webkit-scrollbar{
+  display: none;
+}
 body {
   background-color: #6d1a85;
   color: black;
   overflow-x: hidden;
+}
+
+p{
+  padding: 5px;
+  text-align: center;
 }
 /*Selecting the landing section*/
 .landing {
@@ -53,7 +59,7 @@ body {
   font-size: 20px;
   font-weight: bold;
   color: #5d1671;
-  animation: show 2s 2s;
+  animation: fade 2s 2s;
   animation-fill-mode: forwards;
   opacity: 0;
   font-size: 25px;
@@ -61,39 +67,90 @@ body {
 }
 
 
-@keyframes show {
+@keyframes fade {
   from{ opacity: 0;}
   to{ opacity: 1;}
 }
 /* Selecting the timeline container */
 #timeline-container {
   display: grid;
-  grid-template-columns: 1fr 10% 1fr;
-  grid-template-rows: repeat(4, 1fr);
+  grid-template-columns: 1fr 2px 1fr;
+  grid-template-rows: repeat(4, 50%);
+  position: relative;
+  padding: 5px;
   height: 100vh;
-  width: 100vw;
-  padding: 0;
+  row-gap: 5px;
 }
+
 /* Selecting timeline-line */
 .timeline-line {
   background-color: black;
-  height: 100%;
-  padding: 5px;
+  width: 100%;
   justify-self: center;
   grid-column-start: 2;
   grid-row-start: 1;
   grid-row-end: 5;
+  
 }
+
+/* timeline links*/
+.timeline-link{
+  margin-bottom: 10px;
+  height: 40px;
+  width: 40px;
+  text-decoration: none;
+
+  display: grid;
+  place-items: center;
+  grid-column-start: 2;
+  grid-row-start: 1;
+
+  background-color: #6d1a85;
+  color: black;
+  font-size: 20px;
+  font-weight: bold;
+
+  border: solid 2px black;
+  border-radius: 50%;
+}
+
+.link-one{
+  position: absolute;
+  top: 0;
+  left: -19px;
+  transform: rotateX(180deg);
+  
+}
+
+.link-two{
+  position: absolute;
+  bottom: 5px;
+  left: -19px;
+  /* transform: rotateX(180deg); */
+  grid-column-start: 2;
+  grid-row-start: 1;
+}
+
+
+.link-three{
+  position: absolute;
+  bottom: -65px;
+  left: -19px;
+  transform: rotateX(180deg);
+}
+
 /* Selecting all items */
 .timeline-items {
   border-radius: 50px;
   background: #6d1a85;
-  box-shadow: 20px 20px 60px #5d1671, -20px -20px 60px #7d1e99;
-  padding: 10%;
-  margin: 50px;
+  box-shadow: 20px 20px 60px #5d1671, 20px 20px 60px #7d1e99;
+  margin: 0px 50px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding : 5px;
+  gap: 5px;
+  text-align: center;
 }
 /* Items 1-4 */
 .item-1 {
@@ -109,11 +166,13 @@ body {
 .item-3 {
   grid-column: 1;
   grid-row: 3;
+  z-index: 1;
 }
 
 .item-4 {
   grid-column: 3;
   grid-row: 4;
+  z-index: 1;
 }
 
 @media screen and (max-width: 800px) {
